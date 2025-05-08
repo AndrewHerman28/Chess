@@ -50,10 +50,13 @@ class Piece:
             except Exception as e:
                 print(f"Error: {e}")
 
-    def move(self, row, col, x, y, piece_dict, canvas, cell_size, chess_board, picked_piece):
+    def move(self, row, col, x, y, canvas, cell_size, chess_board):
         # Move image to cell
         canvas.coords(self.id, x + (cell_size // 2), y + cell_size // 2)
+
         # Update chess board
         chess_board[row][col] = self
+
         # Update pieces x y coords
+        chess_board[self.y][self.x] = None
         self.x, self.y = col, row
