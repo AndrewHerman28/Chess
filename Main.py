@@ -87,9 +87,9 @@ def on_cell_click(event):
             # If valid move
             if tempArr[0].canMoveTo(tempArr[0].x, tempArr[0].y, col, row, chess_board):
                 # Move piece
-                tempArr[0].move(row, col, x1, y1, piece_dict, canvas, cell_size, chess_board, tempArr[0])
-                chess_board[row][col] = None
+                tempArr[0].move(row, col, x1, y1, canvas, cell_size, chess_board)
 
+        #Clear currently selected cells
         tempArr.pop(0)
         tempArr.pop(0)
 
